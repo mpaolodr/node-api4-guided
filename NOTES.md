@@ -35,3 +35,29 @@ Install dotenv `npm i dotenv`
   - set up your env variables `PORT=5000`
 
 - check if .env is included in gitignore
+
+## Heroku
+
+- Create New App
+- on Deploy tab, there's a section called deployment method and github is what you want to use
+
+  - in order to do that, we have to connect heroku to github
+  - click on connect to github button that will appear once you select github as deployment method
+  - search for repo
+  - choose branch
+  - click on enable automatic deploys
+  - clicking on deploy branch under manual edploy will push branch first and begin deploying which you can see in overview tab
+
+- to check logs
+
+  - in more button, click view logs
+  - app is not listening in a port that is not supported by heroku (cause of error)
+  - heroku will set an env variable named port
+
+- bug with knex
+- heroku is setting NODE_ENV a value of "production" instead of development
+- delete `const environment = process.env.NODE_ENV || "development"
+- or decalre NODE_ENV to "development"
+- hard code environment to equal development
+
+Default port for https is port 43
